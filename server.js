@@ -13,7 +13,7 @@ let app = express();
 
 // Static directories to make css and js work
 app.use('/build', express.static(path.join(__dirname, 'build')))
-app.use('/common', express.static(path.join(__dirname, '..', 'common')))
+app.use('/assets', express.static(path.join(__dirname, 'assets')))
 
 // I pulled this from index.html
 let htmlStart = `
@@ -23,9 +23,9 @@ let htmlStart = `
       <meta charset="utf-8">
       <title>Alt Flux Sample</title>
 
-      <link rel="shortcut icon" type="image/png" href="../common/assets/react.png">
-      <link rel="stylesheet" href="../common/css/uikit.almost-flat.min.css">
-      <link rel="stylesheet" href="../common/css/main.css">
+      <link rel="shortcut icon" type="image/png" href="assets/images/react.png">
+      <link rel="stylesheet" href="assets/css/uikit.almost-flat.min.css">
+      <link rel="stylesheet" href="assets/css/main.css">
     </head>
     <body>
   `;

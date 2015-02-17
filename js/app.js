@@ -10,6 +10,9 @@ var Iso = require('iso');
 var alt = require('./alt');
 
 Iso.bootstrap(function (state, meta, container) {
-    alt.bootstrap(state);
-    React.render(React.createElement(App), container);
+  alt.bootstrap(state);
+  React.render(React.createElement(App), container);
 });
+
+
+window.alt = alt;

@@ -2,29 +2,31 @@
   "main": "js/app.js",
   "scripts": {
     "start": "npm run build; npm run server",
-    "server": "../node_modules/6to5/bin/6to5-node server.js",
-    "build": "../node_modules/browserify/bin/cmd.js js/app.js > build/bundle.js",
-    "watch": "../node_modules/watchify/bin/cmd.js . -o build/bundle.js -v -d"
+    "server": "babel-node server.js",
+    "build": "browserify js/app.js > build/bundle.js",
+    "watch": "watchify . -o build/bundle.js -v -d"
   },
   "browserify": {
     "transform": [
-      "6to5ify",
+      "babelify",
       "reactify",
       "envify"
     ]
   },
   "dependencies": {
     "alt": "^0.10.2",
+    "babel": "^4.1.1",
     "es6-promise": "^2.0.1",
     "express": "^4.11.2",
     "object-assign": "^2.0.0",
     "react": "^0.12.2"
   },
   "devDependencies": {
-    "6to5": "^3.3.4",
-    "6to5ify": "^4.0.0",
+    "babelify": "^5.0.3",
     "browserify": "^8.0.3",
     "envify": "^3.2.0",
+    "es5-shim": "^4.1.0",
+    "iso": "^4.0.2",
     "reactify": "^0.17.1",
     "uglify-js": "^2.4.16",
     "watchify": "^2.2.1"
